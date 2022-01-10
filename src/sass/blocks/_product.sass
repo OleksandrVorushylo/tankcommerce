@@ -1,0 +1,154 @@
+.product
+  &__wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 100vh
+  &__button
+    background-color: $orange
+    padding: 10px 40px
+    text-transform: uppercase
+    font-size: 12px
+    color: white
+    text-decoration: none
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    margin: auto
+    transition: all 0.3s ease
+    &:hover
+      opacity: 0.7
+      transition: all 0.3s ease
+  &__modal
+    position: relative
+    margin: auto
+    background-color: white
+    width: 629px
+    height: 299px
+    &-close
+      position: absolute
+      background: transparent
+      top: 8px
+      right: 8px
+      height: 17px
+      width: 17px
+      transition: all 0.3s ease
+      &:hover
+        transition: all 0.3s ease
+        transform: scale(1.1)
+    &-text
+      padding-top: 25px
+      font-style: normal
+      font-weight: normal
+      font-size: 12px
+      line-height: 18px
+      text-align: center
+      width: 356px
+      height: 97px
+      overflow: auto
+      margin: auto
+  &__slider
+    min-width: 0
+    width: 497px
+    margin: auto
+    position: relative
+    &-wrap
+      display: flex
+      width: 100%
+    &-item
+      padding: 0 15px
+      height: 171px
+      position: relative
+    &-link
+      text-decoration: none
+      cursor: pointer
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      z-index: 10
+    &-shop
+      position: absolute
+      bottom: 42px
+      left: 15px
+      z-index: 8
+      background-color: $orange
+      padding: 8px
+      color: white
+      font-size: 10px
+      font-weight: 400
+      transition: all 0.8s ease
+      transform-origin: top
+      animation-duration: 1s
+      opacity: 0
+    &-item:hover .product__slider-shop
+      opacity: 1
+      animation-name: up
+      animation-timing-function: ease
+    &-image
+      height: 76%
+      position: relative
+    &-image img
+      position: absolute
+      top: 0
+      object-fit: cover
+      height: 100%
+      transition: all 0.8s ease
+    &-image img:nth-child(1)
+      z-index: 1
+    &-image img:nth-child(2)
+      z-index: 2
+      opacity: 0
+    &-item:hover .product__slider-image img:nth-child(2)
+      opacity: 1
+      transition: all 0.8s ease
+    &-name
+      font-size: 10px
+      font-weight: 400
+      margin-top: 4px
+    &-price
+      font-size: 12px
+      font-weight: 600
+      margin-top: 5px
+    &-price span
+      color: $red
+    &-category
+      position: absolute
+      cursor: pointer
+      z-index: 20
+      text-transform: uppercase
+      top: 10px
+      right: 10px
+      padding: 2px
+      background: rgba(107, 104, 104, 0.6)
+      font-size: 8px
+  &__slider .slick-arrow
+    position: absolute
+    z-index: 5
+    top: 50%
+    margin-top: -10px
+    font-size: 0
+    border: none
+    background: url('../img/icon/arrow.png') 0 0 / 100% no-repeat
+    width: 11px
+    height: 21px
+    cursor: pointer
+  &__slider .slick-arrow.slick-prev
+    left: -20px
+  &__slider .slick-arrow.slick-next
+    right: -20px
+    transform: rotate(180deg)
+.slick
+  &-list
+    overflow: hidden
+    width: 100%
+  &-track
+    display: flex
+
+@keyframes up
+  0%
+    transform: translateY(30px)
+  100%
+    transform: translateY(0px)
